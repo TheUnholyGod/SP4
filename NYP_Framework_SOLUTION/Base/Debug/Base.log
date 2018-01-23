@@ -1,4 +1,5 @@
 ﻿  SceneText.cpp
+c:\users\theunholygod\documents\school\year 2 semester 2\sp4\sp4 game\nyp_framework_solution\base\source\components\transformationcomponent.h(35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 Application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 2 Semester 2\SP4\SP4 Game\NYP_Framework_SOLUTION\Debug\Base.exe

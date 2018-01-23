@@ -19,6 +19,9 @@
     <Filter Include="Components">
       <UniqueIdentifier>{52ca47fe-2c71-4fd1-8dd2-642ac0e95529}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{77df1a6a-adb3-4967-8cae-671e5d936d4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">
@@ -73,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="Source\Components\MeshComponent.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Components\TransformationComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\RenderSystem.h">
+      <Filter>Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

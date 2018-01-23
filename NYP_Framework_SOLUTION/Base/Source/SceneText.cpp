@@ -22,6 +22,7 @@
 #include "Components\MeshComponent.h"
 #include "RenderHelper.h"
 #include "Mtx44.h"
+#include "Components\TransformationComponent.h"
 
 #include <iostream>
 using namespace std;
@@ -118,7 +119,7 @@ void SceneText::Init()
 	playerInfo->Init();
 
 	// Create and attach the camera to the scene
-	//camera.Init(Vector3(0, 0, 10), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 0, 10), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	camera.Init(playerInfo->GetPos(), playerInfo->GetTarget(), playerInfo->GetUp());
 	playerInfo->AttachCamera(&camera);
 	GraphicsManager::GetInstance()->AttachCamera(&camera);
@@ -166,6 +167,8 @@ void SceneText::Init()
     
     e->AddComponent<MeshComponent>();
     e->GetComponent<MeshComponent>()->SetMesh(MeshBuilder::GetInstance()->GetMesh("Chair"));
+    e->AddComponent<TransformationComponent>();
+    e->GetComponent<TransformationComponent>()->Init();
    
 }
 
@@ -264,7 +267,7 @@ void SceneText::Render()
 
     MS& ms = GraphicsManager::GetInstance()->GetModelStack();
     ms.PushMatrix();
-    ms.Translate(5, 0, 0);
+    ms = e->GetComponent<TransformationComponent>()->LoadTransformationMatrix(ms);
     RenderHelper::RenderMesh(e->GetComponent<MeshComponent>()->GetMesh());
     ms.PopMatrix();
 }

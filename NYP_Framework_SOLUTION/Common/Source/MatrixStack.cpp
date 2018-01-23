@@ -133,6 +133,13 @@ void MS::Rotate(float degrees, float axisX, float axisY, float axisZ) {
 	ms.top() = ms.top() * mat;
 }
 
+void MS::Rotate(float degrees, Vector3 axis)
+{
+    Mtx44 mat;
+    mat.SetToRotation(degrees, axis.x, axis.y, axis.z);
+    ms.top() = ms.top() * mat;
+}
+
 /******************************************************************************/
 /*!
 \brief
@@ -150,6 +157,13 @@ void MS::Scale(float scaleX, float scaleY, float scaleZ) {
 	Mtx44 mat;
 	mat.SetToScale(scaleX, scaleY, scaleZ);
 	ms.top() = ms.top() * mat;
+}
+
+void MS::Scale(Vector3 scale)
+{
+    Mtx44 mat;
+    mat.SetToScale(scale.x, scale.y, scale.z);
+    ms.top() = ms.top() * mat;
 }
 
 /******************************************************************************/
@@ -170,6 +184,13 @@ void MS::Translate(float translateX, float translateY, float translateZ) {
 	Mtx44 mat;
 	mat.SetToTranslation(translateX, translateY, translateZ);
 	ms.top() = ms.top() * mat;
+}
+
+void MS::Translate(Vector3 translate)
+{
+    Mtx44 mat;
+    mat.SetToTranslation(translate.x, translate.y, translate.z);
+    ms.top() = ms.top() * mat;
 }
 
 /******************************************************************************/
