@@ -19,6 +19,9 @@
 #include "../Entity.h"
 #include "../Component.h"
 #include "../ComponentManager.h"
+#include "Components\MeshComponent.h"
+#include "RenderHelper.h"
+#include "Mtx44.h"
 
 #include <iostream>
 using namespace std;
@@ -37,6 +40,8 @@ SceneText::SceneText(SceneManager* _sceneMgr)
 SceneText::~SceneText()
 {
 }
+
+static Entity* e = new Entity();
 
 void SceneText::Init()
 {
@@ -157,8 +162,10 @@ void SceneText::Init()
 
 	// Setup the 2D entities
     ComponentManager* cm = new ComponentManager();
-    Entity* e = new Entity();
-    e->AddComponent<Component>();
+    
+    
+    e->AddComponent<MeshComponent>();
+    e->GetComponent<MeshComponent>()->SetMesh(MeshBuilder::GetInstance()->GetMesh("Chair"));
    
 }
 
@@ -254,6 +261,12 @@ void SceneText::Render()
 	GraphicsManager::GetInstance()->SetOrthographicProjection(-halfWindowWidth, halfWindowWidth, -halfWindowHeight, halfWindowHeight, -10, 10);
 	GraphicsManager::GetInstance()->DetachCamera();
 	EntityManager::GetInstance()->RenderUI();
+
+    MS& ms = GraphicsManager::GetInstance()->GetModelStack();
+    ms.PushMatrix();
+    ms.Translate(5, 0, 0);
+    RenderHelper::RenderMesh(e->GetComponent<MeshComponent>()->GetMesh());
+    ms.PopMatrix();
 }
 
 void SceneText::Exit()

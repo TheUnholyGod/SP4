@@ -16,6 +16,9 @@
     <Filter Include="PlayerInfo">
       <UniqueIdentifier>{ee63a848-364d-4119-9628-05cc3d6a4b17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{52ca47fe-2c71-4fd1-8dd2-642ac0e95529}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">
@@ -42,6 +45,9 @@
     <ClCompile Include="Source\EntityManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Components\MeshComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -64,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Source\Light.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Components\MeshComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

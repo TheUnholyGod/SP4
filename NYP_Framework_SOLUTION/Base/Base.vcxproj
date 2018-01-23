@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\Components\MeshComponent.cpp" />
     <ClCompile Include="Source\EntityManager.cpp" />
     <ClCompile Include="Source\FPSCamera.cpp" />
     <ClCompile Include="Source\Light.cpp" />
@@ -22,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\Components\MeshComponent.h" />
     <ClInclude Include="Source\EntityManager.h" />
     <ClInclude Include="Source\FPSCamera.h" />
     <ClInclude Include="Source\Light.h" />

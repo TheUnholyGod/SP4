@@ -3,6 +3,8 @@
 
 #include "Source\SingletonTemplate.h"
 #include "Component.h"
+#include "Source\PassKey.h"
+
 #include <bitset>
 #include <memory>
 
@@ -31,7 +33,8 @@ public:
     inline BaseComponent* CreateComponent()
     {
         std::cout << "A new Component is being created" << std::endl;
-        return new BaseComponent(GetComponentTypeID<ComponentType>());
+        BaseComponent* newComponent = new ComponentType(GetComponentTypeID<ComponentType>(), PassKey<ComponentManager>());
+        return newComponent;
     }
 
 };
